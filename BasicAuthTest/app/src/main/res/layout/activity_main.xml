@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://api.cert-is.ga:4389/authenticate" />
+
+    <!--<EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://www.naver.com"
+        android:id="@+id/edtUrl" />-->
+
+    <Button
+        android:id="@+id/btnConn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="connect" />
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        &lt;!&ndash; 결과 출력 &ndash;&gt;
+        <TextView
+            android:id="@+id/tvRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </ScrollView>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <!-- 결과 출력 -->
+            <TextView
+                android:id="@+id/tvRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtUrl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="http://www.cert-is.ga:4389/test" />
+
+        <Button
+            android:id="@+id/btnConn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="connect" />
+
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tvRes2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
