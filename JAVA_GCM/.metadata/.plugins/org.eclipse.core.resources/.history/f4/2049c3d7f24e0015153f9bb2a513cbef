@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.MulticastResult;
+import com.google.android.gcm.server.Result;
+import com.google.android.gcm.server.Sender;
+
+
+public class GcmTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("topic을 입력하세요.");
+		Scanner sc = new Scanner(System.in);
+		String topic = sc.next();
+		
+		System.out.println("messge를 입력하세요.");
+		String msg = sc.next();
+
+		// 서버 API Key 입력
+        Sender sender = new Sender("AIzaSyAV3dvUrqIiRWHAQLs0bJ5ORlxytZaQQu4"); 
+        
+        // 단말기 RegID 입력
+        String regId = "dmxZ9xdfnFg:APA91bHlIqy7llpg03v6K2mrRqUHPiscYcqQb-kV8IP7RzyqyoMna3IahYVm1zQb__Xsf4jmvjWr60hS9zb9LmaGeawTs78UdTFbpoloZziSW4EPsYh-ryuUD0M1c3H-a1d0HgjzXuS8";
+        
+        Message message = new Message.Builder()
+        .addData("message", topic)
+        .addData("title", msg)
+        .build();
+        
+        List<String> list = new ArrayList<String>();
+        list.add(regId);
+        
+        MulticastResult multiResult;
+        try {
+            multiResult = sender.send(message, list, 5);
+            if (multiResult != null) {
+                List<Result> resultList = multiResult.getResults();
+                for (Result result : resultList) {
+                    System.out.println(result.getMessageId());
+                }
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	}
+}
