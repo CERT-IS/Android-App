@@ -24,7 +24,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/check"
+                android:src="@drawable/icon_toolbar"
                 android:id="@+id/logo"/>
 
             <TextView
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorTitle"
-                android:textSize="20dp"
+                android:textSize="27sp"
                 android:text="@string/toolbar_title"
                 android:id="@+id/toolbar_title"/>
         </LinearLayout>

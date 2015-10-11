@@ -61,11 +61,13 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.sub_item_link_board:
-                        Toast.makeText(getApplication(), "링크 게시판", Toast.LENGTH_LONG).show();
+                        intent = new Intent(getApplication(), LinkActivity.class);
+                        startActivity(intent);
                         return true;
 
                     case R.id.sub_item_calender:
-                        Toast.makeText(getApplication(), "캘린더", Toast.LENGTH_LONG).show();
+                        intent = new Intent(getApplication(), CalendarActivity.class);
+                        startActivity(intent);
                         return true;
 
 //                    sub_header_about
@@ -75,7 +77,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
 //                    sub_header_data
                     case R.id.sub_item_gallery:
-                        Toast.makeText(getApplication(), "동아리 소개", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), "갤러리", Toast.LENGTH_LONG).show();
                         return true;
 
                     case R.id.sub_item_data_board:
@@ -128,13 +130,13 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         toolbar.findViewById(R.id.toolbarCenter).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplication(), IndexActivity.class);
                 // 액티비티 스택 관련
                 // (스택 최상위에서 아래로 가장 가까운 메인을 부른 후 그 사이의 스택 제거)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
 
-                Toast.makeText(getApplication(), "메인으로 이동", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplication(), "메인(index)으로 이동", Toast.LENGTH_LONG).show();
             }
         });
     }

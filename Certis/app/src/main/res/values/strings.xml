@@ -1,27 +1,10 @@
 <resources>
     <!--기본 앱 관련-->
-    <string name="app_name">Certis</string>
+    <string name="app_name">CERT-IS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
-    <string name="toolbar_title">Cert-Is</string>
-
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="title_activity_action_bar">ActionBarActivity</string>
-    <string name="open">open</string>
-    <string name="close">close</string>
-    <string name="title_activity_notice">NoticeActivity</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
-
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_example">Example action</string>
-    <string name="title_activity_notice_edit">NoticeEditActivity</string>
+    <string name="toolbar_title">CERT-IS</string>
 
     <!--네비게이션 드로어 관련-->
     <string name="closeDrawer">Navigation View Closed</string>
@@ -52,4 +35,24 @@
     <!--글쓰기 액티비티 관련-->
     <string name="attachment">첨부</string>
     <string name="done">완료</string>
+
+    <!--Sign Up-->
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_name">이름 (실명)</string>
+    <string name="sign_up_id">ID</string>
+    <string name="sign_up_email">E-mail (로그인 할 때 사용)</string>
+    <string name="sign_up_pw">PassWord</string>
+    <string name="sign_up_confirm_pw">Confirm PassWord</string>
+    <string name="sign_up_phone_number">Phone Number</string>
+
+    <!--Log In-->
+    <string name="forget_pw">Forget PassWord</string>
+    <string name="login">Sign in</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_pw">PassWord</string>
+
+    <!--Link Write-->
+    <string name="link_write_title">사이트 명</string>
+    <string name="link_write_content">사이트 소개 및 한마디</string>
 </resources>
+
