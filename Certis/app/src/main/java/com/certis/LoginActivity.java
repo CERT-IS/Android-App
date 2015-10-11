@@ -7,44 +7,47 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+import org.w3c.dom.Text;
 
-    Button toLink, toCal;
+public class LoginActivity extends Activity {
+
+    TextView signUpText;
+    TextView toMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
-        //임시 링크액티비티로 이동
-        toLink = (Button)findViewById(R.id.ToLink);
-        toLink.setOnClickListener(new View.OnClickListener() {
+        //임시 버튼 메인으로 이동
+        toMain = (TextView)findViewById(R.id.ForgetPW);
+        toMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LinkActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
 
-        //임시 캘린더액티비티로 이동
-        toCal = (Button)findViewById(R.id.ToLCal);
-        toCal.setOnClickListener(new View.OnClickListener() {
+        // 회원가입으로 이동
+        signUpText = (TextView)findViewById(R.id.SignUpText);
+
+        signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
-
-
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 

@@ -1,6 +1,29 @@
 <resources>
-    <string name="app_name">Certis</string>
+    <!--앱 이름-->
+    <string name="app_name">CERT-IS</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <!--액션바 셋팅 버튼-->
+    <string name="action_settings">setting</string>
+
+    <!--Sign Up-->
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_name">이름 (실명)</string>
+    <string name="sign_up_id">ID</string>
+    <string name="sign_up_email">E-mail (로그인 할 때 사용)</string>
+    <string name="sign_up_pw">PassWord</string>
+    <string name="sign_up_confirm_pw">Confirm PassWord</string>
+    <string name="sign_up_phone_number">Phone Number</string>
+
+    <!--Log In-->
+    <string name="forget_pw">Forget PassWord</string>
+    <string name="login">Sign in</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_pw">PassWord</string>
+
+    <!--Link Write-->
+    <string name="link_write_title">사이트 명</string>
+    <string name="link_write_content">사이트 소개 및 한마디</string>
+
+
 </resources>
+

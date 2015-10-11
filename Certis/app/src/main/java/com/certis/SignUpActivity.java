@@ -1,50 +1,37 @@
 package com.certis;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class SignUpActivity extends Activity {
 
-    Button toLink, toCal;
+    TextView returnToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_up);
 
-        //임시 링크액티비티로 이동
-        toLink = (Button)findViewById(R.id.ToLink);
-        toLink.setOnClickListener(new View.OnClickListener() {
+        //로그인 화면으로 되돌아가기
+        returnToLogin = (TextView)findViewById(R.id.ReturnToLogin);
+
+        returnToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LinkActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
-
-        //임시 캘린더액티비티로 이동
-        toCal = (Button)findViewById(R.id.ToLCal);
-        toCal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_sign_up, menu);
         return true;
     }
 

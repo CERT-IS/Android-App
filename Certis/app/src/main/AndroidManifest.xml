@@ -4,17 +4,45 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/CustomActionBarTheme" >
+
+        <!-- 메인 액티비티 -->
         <activity
-            android:name=".MainActivity"
+            android:name=".IntroActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- 추가 액티비티 -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CalendarActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".LinkActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".LinkWriteActivity"
+            android:label="@string/app_name" >
         </activity>
     </application>
 
