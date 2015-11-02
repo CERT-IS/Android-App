@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NavigationDrawerActivity">
+
+    <!--공지사항-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_notice"
+            android:title="@string/sub_header_notice">
+            <menu>
+                <!-- Menu items go here -->
+                <item
+                    android:id="@+id/sub_item_notice"
+                    android:title="@string/sub_notice" />
+                <!--android:icon="@drawable/menu"-->
+                <item
+                    android:id="@+id/sub_item_minutes"
+                    android:title="@string/sub_minutes" />
+                <item
+                    android:id="@+id/sub_item_link_board"
+                    android:title="@string/sub_link_board" />
+                <item
+                    android:id="@+id/sub_item_calender"
+                    android:title="@string/sub_calender" />
+            </menu>
+        </item>
+    </group>
+
+    <!--About-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_about"
+            android:title="@string/sub_header_about">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_about"
+                    android:title="@string/sub_about" />
+            </menu>
+        </item>
+    </group>
+
+    <!--자료실-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_data"
+            android:title="@string/sub_header_data">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_gallery"
+                    android:title="@string/sub_gallery" />
+                <item
+                    android:id="@+id/sub_item_data_board"
+                    android:title="@string/sub_data_board" />
+            </menu>
+        </item>
+    </group>
+
+    <!--자유 게시판-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_free_board"
+            android:title="@string/sub_header_free_board">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_free_board"
+                    android:title="@string/sub_free_board" />
+            </menu>
+        </item>
+    </group>
+
+    <!--도서 관련-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_book"
+            android:title="@string/sub_header_book">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_book"
+                    android:title="@string/sub_book" />
+            </menu>
+        </item>
+    </group>
+
+    <!--팀 프로젝트-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_team_project"
+            android:title="@string/sub_header_team_project">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_team_project"
+                    android:title="@string/sub_team_project" />
+            </menu>
+        </item>
+    </group>
+</menu>
