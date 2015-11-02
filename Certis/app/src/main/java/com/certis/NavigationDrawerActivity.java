@@ -101,6 +101,12 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                         startActivity(intent);
                         return true;
 
+//                    sub_header_setting
+                    case R.id.sub_item_gcm:
+                        intent = new Intent(getApplication(), GCMActivity.class);
+                        startActivity(intent);
+                        return true;
+
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;

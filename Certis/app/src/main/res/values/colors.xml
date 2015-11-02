@@ -15,14 +15,14 @@
     <!--게시판 레이아웃-->
     <color name="colorBottomMenu">#E0E0E0</color>
 
-    <!-- 팀프로젝트 레이아웃-->
+    <!--팀프로젝트 레이아웃-->
     <color name="feed_bg">#d3d6db</color>
     <color name="feed_item_bg">#ffffff</color>
     <color name="feed_item_border">#c2c3c8</color>
     <color name="link">#0a80d1</color>
     <color name="timestamp">#a0a3a7</color>
 
-    <!-- 갤러리 레이아웃-->
+    <!--갤러리 레이아웃-->
     <color name="genre">#666666</color>
     <color name="year">#888888</color>
     <color name="list_divider">#d9d9d9</color>
@@ -30,4 +30,11 @@
     <color name="list_row_end_color">#ffffff</color>
     <color name="list_row_hover_start_color">#ebeef0</color>
     <color name="list_row_hover_end_color">#ebeef0</color>
+
+    <!--GCM 레이아웃-->
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_700">#455A64</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="blue_grey_900">#263238</color>
 </resources>

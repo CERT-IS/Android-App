@@ -94,4 +94,17 @@
             </menu>
         </item>
     </group>
+
+    <!--설정-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sub_header_setting"
+            android:title="@string/sub_header_setting">
+            <menu>
+                <item
+                    android:id="@+id/sub_item_gcm"
+                    android:title="@string/sub_gcm" />
+            </menu>
+        </item>
+    </group>
 </menu>

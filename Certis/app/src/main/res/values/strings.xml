@@ -26,6 +26,8 @@
     <string name="sub_book">도서</string>
     <string name="sub_header_team_project">팀 프로젝트</string>
     <string name="sub_team_project">팀 프로젝트</string>
+    <string name="sub_header_setting">설정</string>
+    <string name="sub_gcm">알림</string>
 
     <!-- 게시판 액티비티 관련-->
     <string name="notice">공지사항</string>
@@ -63,6 +65,11 @@
     <!--갤러리 글쓰기 관련-->
     <string name="gallery_write_title">제목</string>
     <string name="gallery_write_content">내용</string>
+
+    <!--GCM 관련-->
+    <string name="registering_message_ready">InstanceID 토큰 가져오기</string>
+    <string name="registering_message_generating">InstanceID 토큰 생성중...</string>
+    <string name="registering_message_complete">완료!</string>
 
 </resources>
 
