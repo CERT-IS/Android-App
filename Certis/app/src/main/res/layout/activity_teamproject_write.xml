@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/LinkTitleText"
-            android:text="Tim Project"
+            android:text="Team Project"
             android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
