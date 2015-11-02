@@ -10,7 +10,7 @@
     tools:context="com.certis.LoginActivity">
 
     <ImageView
-        android:background="@drawable/loginlogo"
+        android:background="@drawable/loginlogo2"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="60dp"

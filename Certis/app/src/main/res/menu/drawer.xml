@@ -82,7 +82,7 @@
         </item>
     </group>
 
-    <!--팀 프로젝트-->
+    <!--팀프로젝트-->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/sub_header_team_project"

@@ -5,9 +5,29 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorTitle">#000000</color>
 
+    <color name="background">#ececec</color>
+    <color name="main_color">#1bbc9b</color>
+    <color name="white">#ffffff</color>
+
     <!--네비게이션 드로어 레이아웃-->
     <color name="colorDrawer">#00BFA5</color>
 
     <!--게시판 레이아웃-->
     <color name="colorBottomMenu">#E0E0E0</color>
+
+    <!-- 팀프로젝트 레이아웃-->
+    <color name="feed_bg">#d3d6db</color>
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+    <color name="timestamp">#a0a3a7</color>
+
+    <!-- 갤러리 레이아웃-->
+    <color name="genre">#666666</color>
+    <color name="year">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
 </resources>

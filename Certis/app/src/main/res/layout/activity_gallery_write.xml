@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="com.certis.GalleryWriteActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/GalleryTitleText"
+            android:text="Gallery"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/GalleryWriteTitle"
+            android:hint="@string/gallery_write_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <EditText
+            android:id="@+id/GalleryWriteContent"
+            android:hint="@string/gallery_write_content"
+            android:layout_width="match_parent"
+            android:layout_height="270dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/GalleryWriteAttach"
+            android:background="@drawable/attach"
+            android:layout_alignParentLeft="true"
+            android:layout_width="40dp"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/GalleryWriteUpload"
+            android:background="@drawable/upload"
+            android:layout_alignParentRight="true"
+            android:layout_width="40dp"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

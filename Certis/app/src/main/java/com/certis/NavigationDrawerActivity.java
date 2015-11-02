@@ -1,11 +1,11 @@
 package com.certis;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -77,7 +77,8 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
 //                    sub_header_data
                     case R.id.sub_item_gallery:
-                        Toast.makeText(getApplication(), "갤러리", Toast.LENGTH_LONG).show();
+                        intent = new Intent(getApplication(), GalleryActivity.class);
+                        startActivity(intent);
                         return true;
 
                     case R.id.sub_item_data_board:
@@ -96,11 +97,12 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
 //                    sub_header_team_project
                     case R.id.sub_item_team_project:
-                        Toast.makeText(getApplication(), "팀 프로젝트", Toast.LENGTH_LONG).show();
+                        intent = new Intent(getApplication(), TeamActivity.class);
+                        startActivity(intent);
                         return true;
 
-                    default :
-                        Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
+                    default:
+                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
