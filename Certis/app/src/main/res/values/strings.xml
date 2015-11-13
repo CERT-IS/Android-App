@@ -6,6 +6,10 @@
     <string name="action_search">Search</string>
     <string name="toolbar_title">CERT-IS</string>
 
+    <!--URL 관련-->
+    <string name="certis_api_url">http://api.cert-is.kr:9999/authenticate</string>
+    <string name="certis_test_url">http://www.cert-is.kr:9999/test</string>
+
     <!--네비게이션드로어 관련-->
     <string name="closeDrawer">Navigation View Closed</string>
     <string name="openDrawer">Navigation View Opened</string>
