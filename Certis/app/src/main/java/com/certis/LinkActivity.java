@@ -1,34 +1,56 @@
 package com.certis;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ListView;
+import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.certis.link.CardAdapter;
+import com.certis.link.Config;
+import com.certis.link.ItemClickSupport;
+import com.certis.link.SiteLink;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class LinkActivity extends NavigationDrawerActivity {
 
-    ImageButton linkWriteBtn;
-    /** Called when the activity is first created. */
-    private ArrayList<Custom_List_Data> Array_Data;
-    private Custom_List_Data data;
-    private Custom_List_Adapter adapter;
+    //Creating a List of superheroes
+    private List<SiteLink> listSiteMap;
+    private HashMap<Integer, String> siteUrl;
+
+    //Creating Views
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+
+    ImageButton siteWrite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_link);
         getLayoutInflater().inflate(R.layout.activity_link, main_frame);
 
-        // 링크 글쓰기로 이동
-        linkWriteBtn = (ImageButton)findViewById(R.id.LinkWriteBtn);
-
-        linkWriteBtn.setOnClickListener(new View.OnClickListener() {
+        // Write Schedule
+        siteWrite = (ImageButton) findViewById(R.id.siteWrite);
+        siteWrite.bringToFront();
+        siteWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LinkActivity.this, LinkWriteActivity.class);
@@ -36,26 +58,84 @@ public class LinkActivity extends NavigationDrawerActivity {
             }
         });
 
+        //Initializing Views
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
-        ////////////////////////////////////////////////////////////
-        Array_Data = new ArrayList<Custom_List_Data>();
+        //Initializing list
+        listSiteMap = new ArrayList<>();
+        siteUrl = new HashMap<>();
 
-        data = new Custom_List_Data(R.drawable.naver, "네이버",
-                "http://www.naver.com","지식인에게 물어보세요");
-        Array_Data.add(data);
+        //Calling method to get data
+        getData();
 
-        data = new Custom_List_Data(R.drawable.daum, "다음",
-                "http://www.daum.net", "옛날이름은 한메일");
-        Array_Data.add(data);
+        //Item Click Event
+        ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                Intent mintent = new Intent(Intent.ACTION_VIEW, Uri.parse(siteUrl.get(position)));
+                startActivity(mintent);
+            }
+        });
+    }
 
-        data = new Custom_List_Data(R.drawable.google, "구글",
-                "http://www.google.com", "구글링이 짱");
-        Array_Data.add(data);
+    //This method will get data from the web api
+    private void getData(){
+        //Showing a progress dialog
+        final ProgressDialog loading = ProgressDialog.show(this,"Loading Data", "Please wait...",false,false);
 
-        ListView custom_list = (ListView) findViewById(R.id.ListView);
+        //Creating a json array request
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Config.DATA_URL,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        //Dismissing progress dialog
+                        loading.dismiss();
 
-        adapter = new Custom_List_Adapter(this, android.R.layout.simple_list_item_1, Array_Data);
-        custom_list.setAdapter(adapter);
+                        //calling method to parse json array
+                        parseData(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
+                    }
+                });
+
+        //Creating request queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        //Adding request to the queue
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    //This method will parse json data
+    private void parseData(JSONArray array){
+        for (int i = 0; i < array.length(); i++) {
+            SiteLink itemObj = new SiteLink();
+            JSONObject json = null;
+
+            try {
+                json = array.getJSONObject(i);
+                itemObj.setImageUrl(json.getString(Config.TAG_IMAGE_URL));
+                itemObj.setTitle(json.getString(Config.TAG_TITLE));
+                itemObj.setUrls(json.getString(Config.TAG_URLS));
+                //url list
+                siteUrl.put(i, json.getString(Config.TAG_URLS));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            listSiteMap.add(itemObj);
+        }
+
+        //Finally initializing our adapter
+        adapter = new CardAdapter(listSiteMap, this);
+
+        //Adding adapter to recyclerview
+        recyclerView.setAdapter(adapter);
     }
 }
+
