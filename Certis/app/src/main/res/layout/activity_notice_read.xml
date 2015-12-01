@@ -4,11 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.certis.NoticeActivity">
+    tools:context="com.certis.NoticeReadActivity">
 
-    <ListView
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hihihi"
+        android:id="@+id/tvTitle"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/lv"/>
+        android:layout_marginTop="30dp"
+        android:text="hihihihi"
+        android:id="@+id/tvEntity"/>
+
 </LinearLayout>

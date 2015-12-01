@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:padding="@dimen/boardListPadding_size"
+    android:background="@drawable/list_row_selector">
+
+    <!--게시판 내용 제목-->
+    <!--android 속성 ellipsize="end" : 나타낼 수 있는 글자가 길면 글의 끝에 "..." 표시 -->
+    <!--android 속성 maxLines="1" : 나타낼 수 있는 글자가 길면 한 줄까지 나타낸다. -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/boardListTitle_size"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:id="@+id/boardListTitle"/>
+
+    <!--게시판 내용 작성자-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardListTitle"
+        android:textSize="@dimen/boardListUid_size"
+        android:id="@+id/boardListUid"/>
+
+    <!--구분선(첫번째)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardListTitle"
+        android:layout_toRightOf="@+id/boardListUid"
+        android:layout_marginLeft="2dp"
+        android:textSize="@dimen/boardListTvDivider_size"
+        android:text="|"
+        android:id="@+id/tvDivider1"/>
+
+    <!--게시판 내용 작성일-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardListTitle"
+        android:layout_toRightOf="@+id/tvDivider1"
+        android:layout_marginLeft="2dp"
+        android:textSize="@dimen/boardListCreated_at_size"
+        android:id="@+id/boardListCreated_at"/>
+
+    <!--구분선(두번째)-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardListTitle"
+        android:layout_toRightOf="@+id/boardListCreated_at"
+        android:layout_marginLeft="2dp"
+        android:textSize="@dimen/boardListTvDivider_size"
+        android:text="|"
+        android:id="@+id/tvDivider2"/>
+
+    <!-- 글번호 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardListTitle"
+        android:layout_toRightOf="@+id/tvDivider2"
+        android:layout_marginLeft="2dp"
+        android:textSize="@dimen/boardListId_size"
+        android:id="@+id/boardListId"/>
+
+</RelativeLayout>

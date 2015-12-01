@@ -7,28 +7,29 @@
     <string name="toolbar_title">CERT-IS</string>
 
     <!--URL 관련-->
-    <string name="certis_api_url">http://api.cert-is.kr:9999/authenticate</string>
-    <string name="certis_test_url">http://www.cert-is.kr:9999/test</string>
+    <string name="certis_api_url">http://api.cert-is.ga/v1/authenticate</string>
+    <string name="certis_test_url">http://api.cert-is.ga/v1/notices</string>
+    <string name="certis_api_image_host_url">http://api.cert-is.ga</string>
 
     <!--네비게이션드로어 관련-->
     <string name="closeDrawer">Navigation View Closed</string>
     <string name="openDrawer">Navigation View Opened</string>
 
-    <string name="sub_header_notice">공지사항</string>
+    <!--<string name="sub_header_notice">공지사항</string>-->
     <string name="sub_notice">공지사항</string>
     <string name="sub_minutes">회의록</string>
     <string name="sub_link_board">링크 게시판</string>
     <string name="sub_calender">캘린더</string>
-    <string name="sub_header_about">About</string>
+    <!--<string name="sub_header_about">About</string>-->
     <string name="sub_about">동아리 소개</string>
-    <string name="sub_header_data">자료실</string>
+    <!--<string name="sub_header_data">자료실</string>-->
     <string name="sub_gallery">갤러리</string>
     <string name="sub_data_board">자료 게시판</string>
-    <string name="sub_header_free_board">자유 게시판</string>
+    <!--<string name="sub_header_free_board">자유 게시판</string>-->
     <string name="sub_free_board">자유 게시판</string>
-    <string name="sub_header_book">도서 관련</string>
+    <!--<string name="sub_header_book">도서 관련</string>-->
     <string name="sub_book">도서</string>
-    <string name="sub_header_team_project">팀 프로젝트</string>
+    <!--<string name="sub_header_team_project">팀 프로젝트</string>-->
     <string name="sub_team_project">팀 프로젝트</string>
 
     <!-- 게시판 액티비티 관련-->
