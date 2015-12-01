@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/boardListPadding_size"
+    android:background="@drawable/list_row_selector">
+
+    <!-- Thumbnail Image -->
+    <!--일단은 잘 보이기 위해 80dp로 선언-->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/noticeThumbnail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="8dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/boardListTextPaddingTop_size"
+        android:paddingBottom="@dimen/boardListTextPaddingBottom_size"
+        android:layout_toRightOf="@+id/noticeThumbnail">
+
+        <!--게시판 내용 제목-->
+        <!--android 속성 ellipsize="end" : 나타낼 수 있는 글자가 길면 글의 끝에 "..." 표시 -->
+        <!--android 속성 maxLines="1" : 나타낼 수 있는 글자가 길면 한 줄까지 나타낸다. -->
+        <!--위의 타이틀과의 사이 간격 조절 해야함-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/boardListTitle_size"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/noticeListTitle"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--게시판 내용 작성자-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/boardListUid_size"
+                android:id="@+id/noticeListUid"/>
+
+            <!--구분선(첫번째)-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textSize="@dimen/boardListTvDivider_size"
+                android:text="|"
+                android:id="@+id/tvDivider1"/>
+
+            <!--게시판 내용 작성일-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textSize="@dimen/boardListCreated_at_size"
+                android:id="@+id/noticeListCreated_at"/>
+
+            <!--구분선(두번째)-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textSize="@dimen/boardListTvDivider_size"
+                android:text="|"
+                android:id="@+id/tvDivider2"/>
+
+            <!-- 글번호 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textSize="@dimen/boardListId_size"
+                android:id="@+id/noticeListId"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
