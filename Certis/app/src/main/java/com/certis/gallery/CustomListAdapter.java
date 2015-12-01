@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.certis.R;
-import com.certis.teamproject.AppController;
+import com.certis.volley.AppController;
 
 import java.util.List;
 

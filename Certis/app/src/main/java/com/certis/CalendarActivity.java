@@ -11,6 +11,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,6 +23,7 @@ import java.util.HashSet;
 
 public class CalendarActivity extends NavigationDrawerActivity
 {
+    private TextView toolbar_title;
 
     /* return Read Json */
     ArrayList<String> arrayList;
@@ -53,6 +55,9 @@ public class CalendarActivity extends NavigationDrawerActivity
     {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_calendar, main_frame);
+
+        toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getString(R.string.sub_calender));
 
         // Connect DB Set up
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Cache;
 import com.android.volley.Cache.Entry;
@@ -14,9 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.certis.teamproject.AppController;
 import com.certis.teamproject.FeedItem;
 import com.certis.teamproject.FeedListAdapter;
+import com.certis.volley.AppController;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +29,9 @@ import java.util.List;
 
 public class TeamActivity extends NavigationDrawerActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
+
+    private TextView toolbar_title;
+
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
@@ -40,6 +44,9 @@ public class TeamActivity extends NavigationDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_teamproject, main_frame);
+
+        toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getString(R.string.sub_team_project));
 
         listView = (ListView) findViewById(R.id.list);
 

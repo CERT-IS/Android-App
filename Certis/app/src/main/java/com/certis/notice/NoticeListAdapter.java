@@ -52,9 +52,12 @@ public class NoticeListAdapter extends BaseAdapter {
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
-
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.notice_list_row, null);
+        }
+
+        if (imageLoader == null) {
+            imageLoader = AppController.getInstance().getImageLoader();
         }
 
         NetworkImageView thumbNail = (NetworkImageView) convertView.findViewById(R.id.noticeThumbnail);

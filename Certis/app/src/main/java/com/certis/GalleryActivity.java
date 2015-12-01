@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -15,7 +16,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.certis.gallery.CustomListAdapter;
 import com.certis.gallery.Movie;
-import com.certis.teamproject.AppController;
+import com.certis.volley.AppController;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +28,8 @@ import java.util.List;
 public class GalleryActivity extends NavigationDrawerActivity {
     // Log tag
     private static final String TAG = MainActivity.class.getSimpleName();
+
+    private TextView toolbar_title;
 
     // Movies json url
     private static final String url = "http://api.androidhive.info/json/movies.json";
@@ -41,6 +44,9 @@ public class GalleryActivity extends NavigationDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_gallery, main_frame);
+
+        toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getString(R.string.sub_gallery));
 
         listView = (ListView) findViewById(R.id.list);
         adapter = new CustomListAdapter(this, movieList);

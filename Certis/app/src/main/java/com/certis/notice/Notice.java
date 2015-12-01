@@ -15,6 +15,7 @@ public class Notice {
 
     public Notice(String title, String thumbnailUrl, String uid, String created_at, int id) {
         this.title = title;
+        this.thumbnailUrl = thumbnailUrl;
         this.uid= uid;
         this.created_at = created_at;
         this.id = id;

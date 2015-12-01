@@ -8,10 +8,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class LinkActivity extends NavigationDrawerActivity {
+    private TextView toolbar_title;
 
     ImageButton linkWriteBtn;
     /** Called when the activity is first created. */
@@ -24,6 +26,9 @@ public class LinkActivity extends NavigationDrawerActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_link);
         getLayoutInflater().inflate(R.layout.activity_link, main_frame);
+
+        toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+        toolbar_title.setText(getString(R.string.sub_link_board));
 
         // 링크 글쓰기로 이동
         linkWriteBtn = (ImageButton)findViewById(R.id.LinkWriteBtn);
