@@ -9,6 +9,17 @@
     <color name="main_color">#1bbc9b</color>
     <color name="white">#ffffff</color>
 
+    <color name="lightTheme_Background">#fafafa</color>
+
+    <!--플로팅액션버튼-->
+    <color name="menu_backgroundColor">#96000000</color>
+    <color name="menu_colorNormal">#72c02c</color>
+    <color name="menu_colorPressed">#72a02c</color>
+    <color name="menu_colorRipple">#757575ff</color>
+    <color name="fab_colorNormal">#ffffff</color>
+    <color name="fab_colorPressed">#fafafa</color>
+    <color name="fab_colorRipple">#757575ff</color>
+
     <!--네비게이션 드로어 레이아웃-->
     <color name="colorDrawer">#00BFA5</color>
 

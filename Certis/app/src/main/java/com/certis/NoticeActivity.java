@@ -2,10 +2,13 @@ package com.certis;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
@@ -16,6 +19,8 @@ import com.certis.notice.Notice;
 import com.certis.notice.NoticeListAdapter;
 import com.certis.sqlite.DBHelper;
 import com.certis.volley.AppController;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +44,9 @@ public class NoticeActivity extends NavigationDrawerActivity {
     private NoticeListAdapter adapter;
     private DBHelper dbHelper;
 
+    private FloatingActionButton fab_writing;
+    private FloatingActionButton fab_search_property;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +56,29 @@ public class NoticeActivity extends NavigationDrawerActivity {
 
         toolbar_title = (TextView) findViewById(R.id.toolbar_title);
         toolbar_title.setText(getString(R.string.sub_notice));
+
+        final FloatingActionMenu fam = (FloatingActionMenu) findViewById(R.id.fam);
+        fam.setClosedOnTouchOutside(true);
+
+        fab_writing = (FloatingActionButton) findViewById(R.id.fab_writing);
+        fab_search_property = (FloatingActionButton) findViewById(R.id.fab_search_property);
+
+        fab_writing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NoticeWriteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fab_search_property.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), NoticeWriteActivity.class);
+//                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "글찾기 클릭", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         dbHelper = new DBHelper(this);
 

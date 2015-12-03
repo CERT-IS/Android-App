@@ -14,9 +14,10 @@
     <dimen name="boardListTextPaddingBottom_size">12dp</dimen>
     <dimen name="boardListTitle_size">16sp</dimen>
     <dimen name="boardListUid_size">14sp</dimen>
-    <dimen name="boardListTvDivider_size">14sp</dimen>
     <dimen name="boardListCreated_at_size">14sp</dimen>
     <dimen name="boardListId_size">14sp</dimen>
+    <dimen name="boardListTvDivider_size">14sp</dimen>
+    <dimen name="listView_DividerHeight">3dp</dimen>
 
     <!--공지사항 글 쓰기-->
     <dimen name="subHeader_layout_height">48dp</dimen>
