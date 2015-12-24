@@ -120,18 +120,16 @@ public class BasicAuthLoginThread extends AsyncTask<Integer, Void, Integer> {
         super.onPostExecute(res);
 
         if (res == 200) {
-            if (dbHelper.dbSelect() == null) {
-                dbHelper.dbInsert(localToken);
-            } else {
+            if (dbHelper.dbSelect() != null) {
                 dbHelper.dbUpdate(localToken);
+            } else {
+                dbHelper.dbInsert(localToken);
             }
 
             new TokenLoginThread(LoginActivity.mContext).execute();
         } else if (res == 401) {
             Toast.makeText(LoginActivity.mContext, "아이디와 비밀번호를 다시 확인해주세요.", Toast.LENGTH_SHORT).show();
             Log.v("BasicAuthLoginThread", String.valueOf(res));
-        } else if (res == null) {
-            Log.v("BasicAuthLoginThread", "res is null");
         } else {
             Log.v("BasicAuthLoginThread", String.valueOf(res));
         }

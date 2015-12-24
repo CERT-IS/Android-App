@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by GreenUser on 2015-11-07.
@@ -57,7 +58,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Cursor cursor;
         cursor = db.query("LoginToken", new String[] {"_id", "token"}, "_id = '1'", null, null, null, null);
-        String str = "";
+        String str;
 
         if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -66,8 +67,9 @@ public class DBHelper extends SQLiteOpenHelper {
             str = null;
         }
 
-        cursor.close();
-        db.close();
+        if (cursor != null) {
+            cursor.close();
+        }
 
         return str;
     }
@@ -84,8 +86,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public void dbUpdate(String token) {
         db = this.getWritableDatabase();
 
-        String sql = "update LoginToken set token = " + token + " " + "where _id = '1'";
-        db.execSQL(sql);
+        if (dbSelect() != null) {
+            ContentValues values = new ContentValues();
+            values.put("token", token);
+            db.update("LoginToken", values, "_id =1", null);
+        } else {
+            Log.v("dbUpdate", "저장된 토큰을 찾을 수 없습니다.");
+        }
         db.close();
     }
 }

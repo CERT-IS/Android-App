@@ -74,10 +74,14 @@ public class TokenLoginThread extends AsyncTask<Integer, Void, Integer> {
             Toast.makeText(MainActivity.mContext, "로그인 성공", Toast.LENGTH_SHORT).show();
         } else if (res == 401) {
             Log.v("TokenLoginThread", "토큰 인증 오류(401)");
-        } else if (res == null) {
-            Log.v("TokenLoginThread", "res is fail");
+            intent = new Intent(MainActivity.mContext, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            (MainActivity.mContext).startActivity(intent);
         } else {
             Log.v("TokenLoginThread", String.valueOf(res));
+            intent = new Intent(MainActivity.mContext, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            (MainActivity.mContext).startActivity(intent);
         }
     }
 }
