@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightTheme_Background"
     android:orientation="vertical"
     tools:context="com.certis.NoticeActivity">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:divider="@color/lightTheme_Background"
+        android:dividerHeight="@dimen/listView_DividerHeight"
         android:id="@+id/lv"/>
-</LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        fab:menu_backgroundColor="@color/menu_backgroundColor"
+        fab:menu_colorNormal="@color/menu_colorNormal"
+        fab:menu_colorPressed="@color/menu_colorPressed"
+        android:id="@+id/fam">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/fab_colorNormal"
+            fab:fab_colorPressed="@color/fab_colorPressed"
+            fab:fab_size="mini"
+            fab:fab_label="@string/fab_writing"
+            android:src="@drawable/writing"
+            android:id="@+id/fab_writing"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/fab_colorNormal"
+            fab:fab_colorPressed="@color/fab_colorPressed"
+            fab:fab_size="mini"
+            fab:fab_label="@string/fab_search_property"
+            android:src="@drawable/search_property"
+            android:id="@+id/fab_search_property"/>
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+</FrameLayout>
