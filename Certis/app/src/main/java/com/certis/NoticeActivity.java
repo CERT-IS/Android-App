@@ -97,17 +97,13 @@ public class NoticeActivity extends NavigationDrawerActivity {
 
         lv = (ListView) findViewById(R.id.lv);
         adapter = new NoticeListAdapter(this, noticeList);
-        lv.addFooterView(footer);
         lv.setAdapter(adapter);
+        lv.addFooterView(footer);
 
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
         pDialog.show();
-
-        /*// changing action bar color
-        getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#1b1b1b")));*/
 
         // Creating volley request obj
         JsonArrayRequest noticeReq = new JsonArrayRequest(getString(R.string.certis_test_url),
@@ -166,8 +162,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
         lv.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
-//                customLoadMoreDataFromApi(page);
-                handler.postDelayed(customLoadMoreDataFromApi(page), 3000);
+                handler.postDelayed(loadMoreDataRequest(page), 3000);
 
                 if (page == total_page) {
                     lv.removeFooterView(footer);
@@ -178,7 +173,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
     }
 
     // Append more data into the adapter
-    public Runnable customLoadMoreDataFromApi(final int offset) {
+    public Runnable loadMoreDataRequest(final int offset) {
         // This method probably sends out a network request and appends new data items to your adapter.
         // Use the offset value and add it as a parameter to your API request to retrieve paginated data.
         // Deserialize API response and then construct new objects to append to the adapter
@@ -194,7 +189,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
                                 Log.d(TAG, response.toString());
                                 hidePDialog();
 
-                                // Parsing json
+                                // 첫 번째 요청(인덱스(0))은 페이지 관련 데이터를 응답 받아서 제외
                                 for (int i = 1; i < response.length(); i++) {
                                     try {
                                         JSONObject obj = response.getJSONObject(i);
