@@ -9,6 +9,7 @@
     <!--URL 관련-->
     <string name="certis_api_url">http://api.cert-is.ga/v1/authenticate</string>
     <string name="certis_test_url">http://api.cert-is.ga/v1/notices</string>
+    <string name="certis_test_add_request_url">http://api.cert-is.ga/v1/notices?page=</string>
     <string name="certis_api_image_host_url">http://api.cert-is.ga</string>
 
     <!--플로팅액션버튼-->
