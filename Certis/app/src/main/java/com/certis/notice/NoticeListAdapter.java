@@ -23,7 +23,6 @@ public class NoticeListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Notice> noticeItems;
-    private int count;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public NoticeListAdapter(Activity activity, List<Notice> noticeItems) {

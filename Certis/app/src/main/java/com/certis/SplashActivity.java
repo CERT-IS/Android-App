@@ -33,7 +33,6 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(intent);
                     Log.v("SplashActivity", "Token을 찾을 수 없습니다.");
                 }
-
                 finish();
             }
         }, 3000);

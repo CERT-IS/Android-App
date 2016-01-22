@@ -37,6 +37,10 @@
         <activity
             android:name=".NoticeActivity"
             android:label="@string/app_name"/>
+        <!-- 공지사항 액티비티 -->
+        <activity
+            android:name=".NoticeListReadingActivity"
+            android:label="@string/app_name"/>
         <!-- 공지사항(글쓰기) 액티비티 -->
         <activity
             android:name=".NoticeWriteActivity"

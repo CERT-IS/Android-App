@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -170,6 +172,18 @@ public class NoticeActivity extends NavigationDrawerActivity {
                 return true;
             }
         });
+
+        lv.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // view.findViewById()에서 view(클릭한 view)를 생략하면 값이 잘못나온다.
+                TextView noticeListId = (TextView) view.findViewById(R.id.noticeListId);
+
+                Intent intent = new Intent(getApplicationContext(), NoticeListReadingActivity.class);
+                intent.putExtra("offset", noticeListId.getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     // Append more data into the adapter
@@ -180,7 +194,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
 
         Runnable runnable = new Runnable() {
             @Override
-            public void run() {
+            public synchronized void run() {
                 // Creating volley request obj
                 JsonArrayRequest noticeReq = new JsonArrayRequest(getString(R.string.certis_test_add_request_url) + offset,
                         new Response.Listener<JSONArray>() {
