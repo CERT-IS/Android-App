@@ -1,10 +1,15 @@
 package com.certis;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.JsPromptResult;
+import android.webkit.JsResult;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -43,10 +48,10 @@ public class NoticeListReadingActivity extends NavigationDrawerActivity {
 
         webView.addJavascriptInterface(new JavaScriptObject(this), "Android");
 
+        webView.loadUrl(defaultUrl + "/" + offset, getHeaders());
+
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
-
-        webView.loadUrl(defaultUrl + "/" + offset, getHeaders());
     }
 
     private class WebViewClient extends android.webkit.WebViewClient {
@@ -61,48 +66,66 @@ public class NoticeListReadingActivity extends NavigationDrawerActivity {
         public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
             Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
         }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            Log.v("onPageStarted", url);
+        }
+
+        @Override
+        public void onLoadResource(WebView view, String url) {
+            super.onLoadResource(view, url);
+            Log.v("onLoadResource", url);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            Log.v("onPageFinished", url);
+        }
     }
 
     private class WebChromeClient extends android.webkit.WebChromeClient {
-//        @Override
-//        public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
-//            new AlertDialog.Builder(NoticeListReadingActivity.this)
-//                    .setMessage(message)
-//                    .setPositiveButton("확인", new AlertDialog.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            result.confirm();
-//                        }
-//                    })
-//                    .setCancelable(false).create().show();
-//
-//            return true;
-//        }
-//
-//        @Override
-//        public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
-//            new AlertDialog.Builder(NoticeListReadingActivity.this)
-//                    .setTitle(message)
-//                    .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            result.confirm();
-//                        }
-//                    })
-//                    .setNegativeButton("취소", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialogInterface, int i) {
-//                            result.cancel();
-//                        }
-//                    })
-//                    .setCancelable(false).create().show();
-//            return true;
-//        }
-//
-//        @Override
-//        public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
-//            return true;
-//        }
+        @Override
+        public boolean onJsAlert(WebView view, String url, String message, final JsResult result) {
+            new AlertDialog.Builder(NoticeListReadingActivity.this)
+                    .setMessage(message)
+                    .setPositiveButton("확인", new AlertDialog.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            result.confirm();
+                        }
+                    })
+                    .setCancelable(false).create().show();
+
+            return true;
+        }
+
+        @Override
+        public boolean onJsConfirm(WebView view, String url, String message, final JsResult result) {
+            new AlertDialog.Builder(NoticeListReadingActivity.this)
+                    .setTitle(message)
+                    .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            result.confirm();
+                        }
+                    })
+                    .setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            result.cancel();
+                        }
+                    })
+                    .setCancelable(false).create().show();
+            return true;
+        }
+
+        @Override
+        public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
+            return true;
+        }
     }
 
     private Map<String, String> getHeaders() {
@@ -112,10 +135,10 @@ public class NoticeListReadingActivity extends NavigationDrawerActivity {
     }
 
     public class JavaScriptObject {
-        Context context;
+        Context mContext;
 
         JavaScriptObject(Context context) {
-            this.context = context;
+            mContext = context;
         }
 
         @JavascriptInterface
