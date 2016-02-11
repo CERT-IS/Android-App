@@ -76,7 +76,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
         fab_writing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), NoticeWriteActivity.class);
+                Intent intent = new Intent(getApplicationContext(), NoticeListWritingActivity.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +84,7 @@ public class NoticeActivity extends NavigationDrawerActivity {
         fab_search_property.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), NoticeWriteActivity.class);
+//                Intent intent = new Intent(getApplicationContext(), NoticeListWritingActivity.class);
 //                startActivity(intent);
                 Toast.makeText(getApplicationContext(), "글찾기 클릭", Toast.LENGTH_SHORT).show();
             }
@@ -161,12 +161,12 @@ public class NoticeActivity extends NavigationDrawerActivity {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(noticeReq);
 
-        lv.setOnScrollListener(new EndlessScrollListener() {
+        lv.setOnScrollListener(new EndlessScrollListener(0, 0) {
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
                 handler.postDelayed(loadMoreDataRequest(page), 3000);
 
-                if (page == total_page) {
+                if (page >= total_page) {
                     lv.removeFooterView(footer);
                 }
                 return true;

@@ -25,7 +25,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation_drawer);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar); // toolbar.xml에서 정의한 툴바를 설정한다.
+        setSupportActionBar(toolbar); // layout_toolbar.xml에서 정의한 툴바를 설정한다.
 //        getSupportActionBar().setDisplayShowTitleEnabled(false); // 기존의 액션바 타이틀을 없앤다.
 
         main_frame = (FrameLayout) findViewById(R.id.main_frame);
@@ -165,8 +165,4 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-//    public void toolbarCenterOnClick(View view) {
-//        Toast.makeText(getApplication(), "툴바 중앙 클릭", Toast.LENGTH_LONG).show();
-//    }
 }
