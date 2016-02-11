@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/boardListHeight"
     android:padding="@dimen/boardListPadding_size"
     android:background="@drawable/list_row_selector">
 
     <!-- Thumbnail Image -->
-    <!--일단은 잘 보이기 위해 80dp로 선언-->
+    <!-- 현재 썸네일 크기에 따라 리스트뷰 크기 조절-->
+    <!-- 일단은 잘 보이기 위해 80dp로 선언-->
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/noticeThumbnail"
         android:layout_width="80dp"
@@ -39,7 +40,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <!--게시판 내용 작성자-->
             <TextView
@@ -48,37 +49,18 @@
                 android:textSize="@dimen/boardListUid_size"
                 android:id="@+id/noticeListUid"/>
 
-            <!--구분선(첫번째)-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/boardListTvDivider_size"
-                android:text="|"
-                android:id="@+id/tvDivider1"/>
-
             <!--게시판 내용 작성일-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
                 android:textSize="@dimen/boardListCreated_at_size"
                 android:id="@+id/noticeListCreated_at"/>
-
-            <!--구분선(두번째)-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:textSize="@dimen/boardListTvDivider_size"
-                android:text="|"
-                android:id="@+id/tvDivider2"/>
 
             <!-- 글번호 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
+                android:layout_gravity="right"
                 android:textSize="@dimen/boardListId_size"
                 android:id="@+id/noticeListId"/>
         </LinearLayout>

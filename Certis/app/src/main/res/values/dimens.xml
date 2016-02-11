@@ -8,9 +8,13 @@
          https://developer.android.com/design/patterns/navigation-drawer.html -->
     <dimen name="navigation_drawer_width">240dp</dimen>
 
+    <!--툴바-->
+    <dimen name="toolbar_shadow_size">8dp</dimen>
+
     <!--공지사항 게시판-->
+    <dimen name="boardListHeight">88dp</dimen>
     <dimen name="boardListPadding_size">8dp</dimen>
-    <dimen name="boardListTextPaddingTop_size">12dp</dimen>
+    <dimen name="boardListTextPaddingTop_size">8dp</dimen>
     <dimen name="boardListTextPaddingBottom_size">12dp</dimen>
     <dimen name="boardListTitle_size">16sp</dimen>
     <dimen name="boardListUid_size">14sp</dimen>

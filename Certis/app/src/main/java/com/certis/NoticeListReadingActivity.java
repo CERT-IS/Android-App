@@ -33,7 +33,7 @@ public class NoticeListReadingActivity extends NavigationDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_notice_list_reading);
-        getLayoutInflater().inflate(R.layout.activity_notice_list_reading, main_frame);
+        getLayoutInflater().inflate(R.layout.activity_webview, main_frame);
 
         String defaultUrl = (getString(R.string.certis_test_url));
         String offset = getIntent().getStringExtra("offset");
