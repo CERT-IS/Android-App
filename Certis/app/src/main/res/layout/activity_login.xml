@@ -10,47 +10,60 @@
     tools:context="com.certis.LoginActivity">
 
     <ImageView
-        android:background="@drawable/loginlogo2"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="60dp"
-        android:id="@+id/LoginLogo" />
+        android:background="@drawable/loginlogo2"
+        android:id="@+id/loginLogo" />
 
     <EditText
-        android:id="@+id/LoginEmail"
-        android:hint="@string/login_email"
-        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="@string/userID"
+        android:id="@+id/edtUserID"/>
 
     <EditText
-        android:id="@+id/LoginPw"
-        android:hint="@string/login_pw"
-        android:password="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/userPW"
+        android:id="@+id/edtUserPW" />
 
     <TextView
-        android:id="@+id/ForgetPW"
-        android:text="@string/forget_pw"
-        android:layout_gravity="right"
-        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="end"
+        android:textColor="@color/forgetPW"
+        android:text="@string/forgetPW"
+        android:id="@+id/tvForgetPW"/>
 
     <Button
-        android:id="@+id/SignInBtn"
-        android:text="@string/login"
-        android:layout_marginTop="20dp"
-        android:background="@color/main_color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_btn_signin_pressed"
+        android:text="@string/signIn"
+        android:id="@+id/btnSignIn"/>
 
-    <TextView
-        android:id="@+id/SignUpText"
-        android:text="Don't have an account? Sign Up!"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accountQuery" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvSignUp"
+            android:text="@string/signUp"
+            android:id="@+id/tvSignUp"/>
+    </LinearLayout>
 
 </LinearLayout>

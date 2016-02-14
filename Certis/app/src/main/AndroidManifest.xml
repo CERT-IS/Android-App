@@ -15,6 +15,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
+        <!--처음 앱 실행시 스플래시 액티비티가 먼저 실행된다-->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -29,10 +30,7 @@
 
         <!-- 추가 액티비티 -->
 
-        <!-- 스플래시 엑티비티-->
-        <activity
-            android:name=".SplashActivity"
-            android:label="@string/app_name"/>
+        <!-- 메인 엑티비티-->
         <!-- 공지사항 액티비티 -->
         <activity
             android:name=".NoticeActivity"

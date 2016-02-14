@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00897B</color>
+    <color name="colorPrimary">#72c02c</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorTitle">#000000</color>
 
     <color name="background">#ececec</color>
-    <color name="main_color">#1bbc9b</color>
     <color name="white">#ffffff</color>
 
     <color name="lightTheme_Background">#fafafa</color>
+
+    <!--로그인 액티비티-->
+    <color name="forgetPW">#2196f3</color>
+    <color name="btnSignIn">#72c02c</color>
+    <color name="tvSignUp">#2196f3</color>
+
+    <!--툴바-->
+    <color name="toolbarBackground">#72c02c</color>
+    <color name="toolbarTitle">#ffffff</color>
 
     <!--플로팅액션버튼-->
     <color name="menu_backgroundColor">#96000000</color>
@@ -21,7 +28,7 @@
     <color name="fab_colorRipple">#757575ff</color>
 
     <!--네비게이션 드로어 레이아웃-->
-    <color name="colorDrawer">#00BFA5</color>
+    <color name="colorDrawer">#72c02c</color>
 
     <!--게시판 레이아웃-->
     <color name="colorBottomMenu">#E0E0E0</color>

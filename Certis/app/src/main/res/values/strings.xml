@@ -1,10 +1,20 @@
 <resources>
+    <!--&#160; : 공백-->
+
     <!--기본 앱 관련-->
     <string name="app_name">CERT-IS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
     <string name="toolbar_title">CERT-IS</string>
+
+    <!--로그인 액티비티 관련-->
+    <string name="userID">ID</string>
+    <string name="userPW">Password</string>
+    <string name="forgetPW">Forget Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="accountQuery">"Don't have an account?"</string>
+    <string name="signUp">&#160;Sign Up!</string>
 
     <!--URL 관련-->
     <string name="certis_api_url">http://api.cert-is.ga/v1/authenticate</string>
@@ -55,12 +65,6 @@
     <string name="sign_up_pw">PassWord</string>
     <string name="sign_up_confirm_pw">Confirm PassWord</string>
     <string name="sign_up_phone_number">Phone Number</string>
-
-    <!--로그인 액티비티 관련-->
-    <string name="forget_pw">Forget PassWord</string>
-    <string name="login">Sign in</string>
-    <string name="login_email">E-mail</string>
-    <string name="login_pw">PassWord</string>
 
     <!--링크 글쓰기 관련-->
     <string name="link_write_title">사이트 명</string>

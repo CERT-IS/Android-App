@@ -2,9 +2,10 @@
     <!-- Base application theme. -->
     <!--툴바를 사용하기 때문에 액션바를 대체한다.NoActionBar 선언-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        <!-- Customize your theme here.-->
+        <!--api 21 이상에서는 android:colorPrimary 형식 사용-->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="windowBackground">@color/colorPrimary</item>-->
+        <!--EditText를 선택시 커서나 밑줄 색상을 변경-->
+        <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 </resources>

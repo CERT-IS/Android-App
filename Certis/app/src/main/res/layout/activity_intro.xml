@@ -6,7 +6,7 @@
     tools:context="com.certis.IntroActivity">
 
     <ImageView
-        android:background="@drawable/logo"
+        android:background="@drawable/splash_bg_logo_normal"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
